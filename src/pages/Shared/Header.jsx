@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <div className="my-container sticky top-0 z-30">
       <div className="navbar bg-slate-100">
-        <a className="btn btn-ghost normal-case text-4xl font-bold"> ChefRecipe</a>
+        <a className="btn btn-ghost normal-case text-4xl font-bold"> Foodie Crush</a>
         <div className="navbar-end">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
