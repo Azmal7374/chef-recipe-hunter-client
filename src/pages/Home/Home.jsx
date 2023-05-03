@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import foodie1 from '../../assets/foodie1.avif'
 import foodie2 from '../../assets/foodie2.avif'
 import LatesArticles from '../LatesArticles/LatesArticles';
+import Chefs from '../Chefs/Chefs';
 const Home = () => {
     const [latesArticles, setLatesArticles] =useState([])
     useEffect(() =>{
@@ -10,7 +11,14 @@ const Home = () => {
         .then(data =>setLatesArticles(data))
     },[])
 
-    console.log(typeof latesArticles);
+
+    const [chefData, setChefData] = useState([])
+    useEffect(() =>{
+        fetch('http://localhost:5000/chefData')
+        .then(res=>res.json())
+        .then(data =>setChefData(data))
+    },[])
+console.log(chefData);
     return (
         <div className="my-container">
              <section className="bg-slate-100">
@@ -29,7 +37,12 @@ const Home = () => {
              </section>
 
              <section className='mt-10'>
-             <h2 className="text-center font-bold text-3xl">Chef Recipe</h2>
+                <h2 className='text-center font-bold text-3xl'>Hello </h2>  
+             <div className='grid md:grid-cols-2 '>
+             {
+                chefData.map((chef) => <Chefs key={chef.id} chef={chef}></Chefs>)
+             }
+             </div>
              </section>
 
              <section className='mt-10'>
