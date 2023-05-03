@@ -17,7 +17,7 @@ import google from "../../assets/google.png";
 import github from "../../assets/github.png";
 import Swal from "sweetalert2";
 import app from "../../firebase/firebase.config";
-import { AuthContext } from "../../providers/AuthProviders";
+import { AuthContext} from "../../providers/AuthProviders";
 
 const Login = () => {
   const auth = getAuth(app);
@@ -47,9 +47,6 @@ const Login = () => {
         console.log(loggedInUser);
         form.reset();
         navigate(from, { replace: true });
-        if (!loggedInUser.emailVerified) {
-          alert("You are verified");
-        }
         setError("");
         Swal.fire({
           title: "Success",
@@ -202,8 +199,7 @@ const Login = () => {
                 </form>
               </div>
 
-              <p className="  mt-2 text-center">
-                Don't have account?
+              <p className="  mt-2 text-center">Don't have account?
                 <Link to="/register" className="text-orange-500 mx-1">
                   Sign up
                 </Link>

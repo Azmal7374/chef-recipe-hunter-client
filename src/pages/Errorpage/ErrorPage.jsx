@@ -6,7 +6,7 @@ import { FaceFrownIcon } from '@heroicons/react/24/solid';
 
 const ErrorPage = () => {
     const   {error, status} = useRouteError();
-    console.log(error.message);
+    console.log(error?.message);
     console.log(status);
     return (
         <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>

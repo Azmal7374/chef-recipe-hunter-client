@@ -101,7 +101,7 @@ const Header = () => {
             </li>
              <NavLink>
              <li>
-             <button className="mt-5 w-full h-12 p-4  bg-orange-600   text-white  font-bold hover:bg-orange-700 "><FontAwesomeIcon className="ml-5" icon={faPlus}></FontAwesomeIcon> Post A Job</button>
+             <button className="mt-5 w-full h-12 p-4  bg-orange-600   text-white  font-bold hover:bg-orange-700 "><FontAwesomeIcon className="ml-5" icon={faPlus}></FontAwesomeIcon>Foodie Crush</button>
              </li>
              </NavLink>
             </ul>
@@ -160,7 +160,7 @@ const Header = () => {
    </li>
      <NavLink>
      <li className="md:ml-24 lg:ml-30 xl:ml-52">
-     <button className="p-4  bg-orange-600   text-white  font-bold hover:bg-orange-700 "><FontAwesomeIcon className="ml-5" icon={faPlus}></FontAwesomeIcon> Post A Job</button>
+     <button className="p-4  bg-orange-600   text-white  font-bold hover:bg-orange-700 "><FontAwesomeIcon className="ml-5" icon={faPlus}></FontAwesomeIcon>Foodie Crush</button>
      </li>
      </NavLink>
       

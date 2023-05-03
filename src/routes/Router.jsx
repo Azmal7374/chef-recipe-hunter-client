@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import Blog from "../pages/Blog/Blog";
 import { ErrorIcon } from "react-hot-toast";
 import ErrorPage from "../pages/Errorpage/ErrorPage";
+import ChefDetails from "../pages/ChefDetails/ChefDetails";
  
 
 const router =createBrowserRouter([
@@ -16,7 +17,13 @@ const router =createBrowserRouter([
     children:[
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader: ()=> fetch('http://localhost:5000/topChef')
+        },
+        {
+        path:'chef/:id',
+        element:<ChefDetails></ChefDetails>,
+        loader: ({params})=> fetch(`http://localhost:5000/chefData/${params.id}`)
         },
         {
             path:'/login',

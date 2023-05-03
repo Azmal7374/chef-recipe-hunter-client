@@ -57,7 +57,7 @@ const Register = () => {
         event.target.reset();
         setError('')
         setSuccess('User has created successfully');
-        sendVerificationEmail(loggedUser)
+        // sendVerificationEmail(loggedUser)
         updateUserData(loggedUser, name)
 
     })
@@ -72,17 +72,7 @@ const Register = () => {
     })
 
     }
-
-    const sendVerificationEmail =(user) =>{
-      sendEmailVerification(user)
-        .then(result =>{
-            console.log(result);
-            toast('Please verify your email')
-        })
-      }
-
-
-
+ 
       const updateUserData =(user, name) =>{
          updateProfile(user, {
             displayName:name,
