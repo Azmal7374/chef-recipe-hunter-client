@@ -60,8 +60,7 @@ const Header = () => {
              {
             user ?   
             <li title={user.displayName}>
-            <NavLink
-              to="/login"
+            <NavLink onClick={handleLogOut}
               className={({ isActive }) =>
                 isActive ? "active" : "default"
               }
@@ -122,7 +121,6 @@ const Header = () => {
           user ?   
           <li title={user.displayName}>
           <NavLink onClick={handleLogOut}
-            to="/login"
             className={({ isActive }) =>
               isActive ? "active" : "default"
             }

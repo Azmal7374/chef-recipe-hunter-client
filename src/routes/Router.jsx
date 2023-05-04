@@ -7,6 +7,7 @@ import Blog from "../pages/Blog/Blog";
 import { ErrorIcon } from "react-hot-toast";
 import ErrorPage from "../pages/Errorpage/ErrorPage";
 import ChefDetails from "../pages/ChefDetails/ChefDetails";
+import PrivateRoute from "./PrivateRoute";
  
 
 const router =createBrowserRouter([
@@ -22,7 +23,7 @@ const router =createBrowserRouter([
         },
         {
         path:'chef/:id',
-        element:<ChefDetails></ChefDetails>,
+        element:<PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/chefData/${params.id}`)
         },
         {
