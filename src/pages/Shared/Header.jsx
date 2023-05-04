@@ -2,18 +2,29 @@ import React, { useContext, useState } from "react";
 import {
   BoltIcon,
   Bars3BottomRightIcon,
-  XMarkIcon, ArrowLeftOnRectangleIcon,user 
+  XMarkIcon,
+  ArrowLeftOnRectangleIcon,
+  user,
 } from "@heroicons/react/24/solid";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash, faUser, faMessage, faGear, faLock, faArrowRightFromBracket, faPlus} from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faEyeSlash,
+  faUser,
+  faMessage,
+  faGear,
+  faLock,
+  faArrowRightFromBracket,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import Marquee from "react-fast-marquee";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  // console.log(user.photoUrl);
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -25,7 +36,10 @@ const Header = () => {
   return (
     <div className="my-container sticky top-0 z-30">
       <div className="navbar bg-slate-100">
-        <a className="btn btn-ghost normal-case text-4xl font-bold"> Foodie Crush</a>
+        <a className="btn btn-ghost normal-case text-4xl font-bold">
+          {" "}
+          Foodie Crush
+        </a>
         <div className="navbar-end">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -46,40 +60,42 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-4 bg-base-100 rounded-md  w-52"
+              className="menu menu-compact dropdown-content mt-3 p-8 bg-base-100 rounded-md  w-52"
             >
-            <li>
-            <NavLink 
-              to='/'
-              className={({ isActive }) => (isActive ? 'active' : 'default')}
-            >
-              Home
-            </NavLink>
-          </li>
-               
-             {
-            user ?   
-            <li title={user.displayName}>
-            <NavLink onClick={handleLogOut}
-              className={({ isActive }) =>
-                isActive ? "active" : "default"
-              }
-            >
-              Logout
-            </NavLink>
-          </li>
-            :
-            <li>
-              <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                  isActive ? "active" : "default"
-                }
-              >
-                Login
-              </NavLink>
-            </li>
-             }
+              <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+
+              {user ? (
+                <li title={user.displayName}>
+                  <NavLink
+                    onClick={handleLogOut}
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                  >
+                    Logout
+                  </NavLink>
+                </li>
+              ) : (
+                <li>
+                  <NavLink
+                    to="/login"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                  >
+                    Login
+                  </NavLink>
+                </li>
+              )}
               <li>
                 <NavLink
                   to="/register"
@@ -87,84 +103,85 @@ const Header = () => {
                     isActive ? "active" : "default"
                   }
                 >
-                 Register
+                  Register
                 </NavLink>
               </li>
               <li>
-              <NavLink 
-                to='/blog'
-                className={({ isActive }) => (isActive ? 'active' : 'default')}
-              >
-              Blog
-              </NavLink>
-            </li>
-             <NavLink>
-             <li>
-             <button className="mt-5 w-full h-12 p-4  bg-orange-600   text-white  font-bold hover:bg-orange-700 "><FontAwesomeIcon className="ml-5" icon={faPlus}></FontAwesomeIcon>Foodie Crush</button>
-             </li>
-             </NavLink>
+                <NavLink
+                  to="/blog"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  Blog
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-          <li>
-          <NavLink 
-            to='/'
-            className={({ isActive }) => (isActive ? 'active' : 'default')}
-          >
-            Home
-          </NavLink>
-        </li>
-       
-        {
-          user ?   
-          <li title={user.displayName}>
-          <NavLink onClick={handleLogOut}
-            className={({ isActive }) =>
-              isActive ? "active" : "default"
-            }
-          >
-            Logout
-          </NavLink>
-        </li>
-          :
-          <li>
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                isActive ? "active" : "default"
-              }
-            >
-              Login
-            </NavLink>
-          </li>
-           }
-     <li>
-     <NavLink
-     to='/register'
-     className={({ isActive }) => (isActive ? 'active' : 'default')}
-   >
-    Register
-   </NavLink>
-     </li>
-     <li>
-     <NavLink 
-       to='/blog'
-       className={({ isActive }) => (isActive ? 'active' : 'default')}
-     >
-     Blog
-     </NavLink>
-   </li>
-     <NavLink>
-     <li className="md:ml-24 lg:ml-30 xl:ml-52">
-     <button className="p-4  bg-orange-600   text-white  font-bold hover:bg-orange-700 "><FontAwesomeIcon className="ml-5" icon={faPlus}></FontAwesomeIcon>Foodie Crush</button>
-     </li>
-     </NavLink>
-      
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Home
+              </NavLink>
+            </li>
+
+            {user ? (
+              <li title={user.displayName}>
+                <NavLink
+                  onClick={handleLogOut}
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  Logout
+                </NavLink>
+              </li>
+            ) : (
+              <li>
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  Login
+                </NavLink>
+              </li>
+            )}
+            <li>
+              <NavLink
+                to="/register"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Register
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Blog
+              </NavLink>
+            </li>
           </ul>
         </div>
-        <div className="navbar-end"></div>
+        <div className="navbar-end">
+          {user && (
+            <li title={user.displayName} className="md:ml-24 lg:ml-30 xl:ml-52">
+              <img
+                className="w-20 h-20 border rounded-full"
+                src={user.photoURL}
+                alt=""
+              />
+            </li>
+          )}
+        </div>
       </div>
     </div>
   );

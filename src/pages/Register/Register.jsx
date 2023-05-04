@@ -18,9 +18,10 @@ const Register = () => {
         // collect form data
         const name = event.target.name.value;
         const email = event.target.email.value;
+        const photo = event.target.photo.value;
         const password = event.target.password.value
         const confirm = event.target.confirm.value
-        console.log(name, email, password, confirm);
+        console.log(name, email,photo, password, confirm);
 
          //Validation:
     if(password !== confirm) {
@@ -58,7 +59,7 @@ const Register = () => {
         setError('')
         setSuccess('User has created successfully');
         // sendVerificationEmail(loggedUser)
-        updateUserData(loggedUser, name)
+        updateUserData(loggedUser, name, photo)
 
     })
     .catch(error => {
@@ -73,9 +74,11 @@ const Register = () => {
 
     }
  
-      const updateUserData =(user, name) =>{
+      const updateUserData =(user, name,photo) =>{
          updateProfile(user, {
             displayName:name,
+            photoURL: photo,
+             
          })
          .then(()=>{
             console.log('User name update');
@@ -105,10 +108,22 @@ const Register = () => {
           Full Name
         </label>
       </div>
+      
       <div className="md:w-2/3">
         <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="name" type="text" name="name" placeholder="Your Name" required />
       </div>
     </div>
+    <div className="md:flex md:items-center mb-4">
+    <div className="md:w-1/3">
+      <label className="block text-gray-500 font-bold  mb-1 md:mb-0 pr-4" htmlFor="photo">
+      Photo URL
+      </label>
+    </div>
+    <div className="md:w-2/3">
+      <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="photo" type="photo" name="photo" placeholder="Photo URL" required />
+    </div>
+  </div>
+
     <div className="md:flex md:items-center mb-4">
       <div className="md:w-1/3">
         <label className="block text-gray-500 font-bold  mb-1 md:mb-0 pr-4" htmlFor="email">

@@ -10,9 +10,9 @@ const ChefRecipeDetails = ({cDetails}) => {
            <section className="">
             <div className="w-full border border-collapse border-gray-400 rounded-md md:rounded-sm p-8">
    
-    <h2 className="card-title">{recipeTitle}</h2>
+    <h2 className="font-bold text-2xl">{recipeTitle}</h2>
     <ul className='list-disc mt-2'>
-    <p className="text-gray-600 font-semibold">Ingerdiants:</p>
+    <p className="font-semibold">Ingerdiants:</p>
    <div className="ml-4 text-gray-600 ">
     {
       ingredirents.slice(0,5).map((ing, index) => <li key={index}>{ing}</li>)
