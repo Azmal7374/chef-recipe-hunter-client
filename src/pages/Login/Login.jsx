@@ -210,18 +210,18 @@ const Login = () => {
               <p className="flex justify-center text-success font-bold text-shadow mt-4">
                 {success}
               </p>
-              <div className="mt-2 flex justify-center">
+              <div  onClick={handleGoogleLogin} className="mt-2 flex justify-center">
                 <button
-                  onClick={handleGoogleLogin}
+                 
                   className="h-12 pl-2 pr-2 border-2 border-blue-600 rounded-l-md"
                 >
                   <img className="w-10 h-10" src={google} alt="" />
                 </button>
                 <button className="bg-blue-600 hover:bg-blue-700 p-3 h-12 w-48 text-white rounded-r-md font-semibold" style={{fontSize:'13px'}}>LOG IN WITH GOOGLE</button>
               </div>
-              <div className="mt-2 flex items-center  justify-center">
+              <div onClick={handleGithubLogin} className="mt-2 flex items-center  justify-center">
                 <button
-                  onClick={handleGithubLogin}
+                 
                   className=" h-12 pl-2 pr-2  border-2 border-purple-600 rounded-l-md "
                 >
                   <img className="w-10 h-10 " src={github} alt="" />

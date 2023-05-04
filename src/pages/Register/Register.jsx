@@ -58,7 +58,6 @@ const Register = () => {
         event.target.reset();
         setError('')
         setSuccess('User has created successfully');
-        // sendVerificationEmail(loggedUser)
         updateUserData(loggedUser, name, photo)
 
     })

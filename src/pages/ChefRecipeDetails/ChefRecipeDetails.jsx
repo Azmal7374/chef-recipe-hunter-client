@@ -19,7 +19,7 @@ const ChefRecipeDetails = ({cDetails}) => {
     return (
         <div className="">
            <section className="">
-            <div className="w-full border border-collapse border-gray-400 rounded-md md:rounded-sm p-8">
+            <div className="w-full border border-collapse border-gray-400 rounded-md md:rounded-sm p-8" style={{height:'700px'}}>
    
     <h2 className="font-bold text-2xl">{recipeTitle}</h2>
     <ul className='list-disc mt-2'>
@@ -56,7 +56,7 @@ const ChefRecipeDetails = ({cDetails}) => {
       <span className='ml-2 '>{cooking_rating.number}</span>
       </div>
     <div className="">
-      <button onClick={()=>handleDisable()} className="bg-gray-600   p-3 w-40  rounded-md mt-8 text-white font-bold hover:bg-gray-700 disabled:opacity-25"
+      <button onClick={()=>handleDisable()} className="bg-gray-600   p-3 w-40  rounded-md   text-white font-bold hover:bg-gray-700 disabled:opacity-25 mb"
        disabled={!disable}>Favourite Recipe</button>
     </div>
 </div>
