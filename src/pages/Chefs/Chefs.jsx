@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShare, faHeartBroken, faArrowRotateRight } from '@fortawesome/free-solid-svg-icons'
+import { faShare, faHeartBroken, faArrowRotateRight } from '@fortawesome/free-solid-svg-icons';
+import LazyLoad from 'react-lazy-load';
+
 const Chefs = ({ chef }) => {
   const {
     id,
@@ -15,9 +17,11 @@ const Chefs = ({ chef }) => {
   return (
     <div className="mt-10">
       <div className="card w-full      bg-base-100 shadow-xl">
-        <figure>
-          <img className="w-full h-96" src={ChefPicture} alt="Shoes" />
-        </figure>
+      <LazyLoad height={362} threshold={0.95}>
+         <figure>
+         <img className="w-full h-96" src={ChefPicture} alt="Shoes" />
+         </figure>
+          </LazyLoad>
         <div className="card-body">
           <h1 className="text-xl font-semibold">{chefName}</h1>
          <div className="flex">
