@@ -42,7 +42,7 @@ const ChefRecipeDetails = ({cDetails}) => {
       ): (
         <>
         <p className=' text-gray-900'>{cookingMethods}....</p>
-      <span className='cursor-pointer text-blue-600 mb-5' onClick={() =>setFold(fold)}>Read Less</span>
+      <span className='cursor-pointer text-blue-600 mb-5' onClick={() =>setFold(!fold)}>Read Less</span>
         </> 
       
   )

@@ -35,7 +35,7 @@ const Home = () => {
              </section>
 
              <section className='mt-10'>
-                <h2 className='text-center font-bold text-3xl'>Hello </h2>  
+                <h2 className='text-center font-bold text-3xl'>Top Chef</h2>  
              <div className='grid md:grid-cols-2 gap-10'>
              {
                 chef.map((chef) => <Chefs key={chef.id} chef={chef}></Chefs>)
