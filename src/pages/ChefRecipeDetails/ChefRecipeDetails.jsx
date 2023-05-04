@@ -11,8 +11,8 @@ const ChefRecipeDetails = ({cDetails}) => {
     console.log(cDetails);
 
     const handleDisable = () => {
-      setDisable(false)
       toast('My Favourite Recipe!')
+      setDisable(false)
     }
 
 

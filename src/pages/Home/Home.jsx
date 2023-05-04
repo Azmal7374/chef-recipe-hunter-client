@@ -25,7 +25,7 @@ const Home = () => {
            <h2 className='ml-10 mr-10 text-gray-600'>The food blog with mostly healthy recipes made with real, whole foods inspiring more people to get into the kitchen and cook something good.
            </h2>
           <div className='ml-10 mr-10'>
-          <button  className='bg-gray-600 p-3 w-40  rounded-md mt-8 text-white font-bold hover:bg-gray-700'>Foodie Crush</button>
+          <button  className='bg-gray-600 p-3 w-40  rounded-md mt-8 text-white font-bold hover:bg-gray-700'>Chef Recipe</button>
           </div>
            </div>
            <div className=" mt-10">
