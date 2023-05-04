@@ -3,24 +3,26 @@ import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 
 const ChefRecipeDetails = ({cDetails}) => {
-    const {_id,recipeTitle,cooking_rating} = cDetails;
+    const {_id,recipeTitle,cooking_rating, ingredirents,cookingMethods} = cDetails;
     console.log(cDetails);
     return (
         <div className="">
            <section className="">
-            <div className="w-full  border border-collapse border-gray-400 rounded-md md:rounded-sm p-4">
+            <div className="w-full border border-collapse border-gray-400 rounded-md md:rounded-sm p-8">
    
     <h2 className="card-title">{recipeTitle}</h2>
-    <ul className='list-disc'>
+    <ul className='list-disc mt-2'>
     <p className="text-gray-600 font-semibold">Ingerdiants:</p>
    <div className="ml-4 text-gray-600 ">
-   <li>Fish</li>
-   <li>Meet</li>
-   <li>Korolla</li>
-   <li>Chicken</li>
-   <li>ALu Vorta</li>
+    {
+      ingredirents.slice(0,5).map((ing, index) => <li key={index}>{ing}</li>)
+    }
    </div>
     </ul>
+    <div className="mt-3">
+    <p className="font-bold">Cooking Methods:</p>
+    <p className='text-gray-600'>{cookingMethods.slice(0,200)}... <span className="text-orange-500">Read More</span></p>
+    </div>
     <div className='mt-2 flex items-center'>
         
     <Rating className='' 
