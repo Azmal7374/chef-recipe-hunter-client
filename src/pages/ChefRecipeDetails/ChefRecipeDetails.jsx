@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
-
+// import toast, { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const ChefRecipeDetails = ({cDetails}) => {
   const [fold, setFold] = useState(true)
+  const[disable, setDisable] = useState(true)
     const {_id,recipeTitle,cooking_rating, ingredirents,cookingMethods} = cDetails;
     console.log(cDetails);
+
+    const handleDisable = () => {
+      setDisable(false)
+      toast('My Favourite Recipe!')
+    }
+
+
     return (
         <div className="">
            <section className="">
@@ -43,10 +53,11 @@ const ChefRecipeDetails = ({cDetails}) => {
     <Rating className='' 
     style={{ maxWidth: 100 }} 
     value={Math.round(cooking_rating.number || 0)} readonly />
-      <span className='ml-2'>{cooking_rating.number}</span>
+      <span className='ml-2 '>{cooking_rating.number}</span>
       </div>
     <div className="">
-      <button className='bg-gray-600 p-3 w-40  rounded-md mt-8 text-white font-bold hover:bg-gray-700'>Favourite Recipe</button>
+      <button onClick={()=>handleDisable()} className="bg-gray-600   p-3 w-40  rounded-md mt-8 text-white font-bold hover:bg-gray-700 disabled:opacity-25"
+       disabled={!disable}>Favourite Recipe</button>
     </div>
 </div>
            </section>
