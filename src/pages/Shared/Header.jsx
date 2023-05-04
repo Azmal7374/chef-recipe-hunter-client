@@ -40,7 +40,7 @@ const Header = () => {
           {" "}
           Foodie Crush
         </a>
-        <div className="navbar-end">
+        <div className="ml-4 md:ml-32">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -74,7 +74,7 @@ const Header = () => {
               </li>
 
               {user ? (
-                <li title={user.displayName}>
+                <li className="mt-2" title={user.displayName}>
                   <NavLink
                     onClick={handleLogOut}
                     className={({ isActive }) =>
@@ -85,7 +85,7 @@ const Header = () => {
                   </NavLink>
                 </li>
               ) : (
-                <li>
+                <li className="mt-2">
                   <NavLink
                     to="/login"
                     className={({ isActive }) =>
@@ -96,7 +96,7 @@ const Header = () => {
                   </NavLink>
                 </li>
               )}
-              <li>
+              <li className="mt-2">
                 <NavLink
                   to="/register"
                   className={({ isActive }) =>
@@ -106,7 +106,7 @@ const Header = () => {
                   Register
                 </NavLink>
               </li>
-              <li>
+              <li className="mt-2">
                 <NavLink
                   to="/blog"
                   className={({ isActive }) =>
@@ -120,8 +120,8 @@ const Header = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
+          <ul className="menu menu-horizontal px-4">
+            <li className="mr-6">
               <NavLink
                 to="/"
                 className={({ isActive }) => (isActive ? "active" : "default")}
@@ -131,7 +131,7 @@ const Header = () => {
             </li>
 
             {user ? (
-              <li title={user.displayName}>
+              <li className="ml-4" title={user.displayName}>
                 <NavLink
                   onClick={handleLogOut}
                   className={({ isActive }) =>
@@ -142,7 +142,7 @@ const Header = () => {
                 </NavLink>
               </li>
             ) : (
-              <li>
+              <li className="">
                 <NavLink
                   to="/login"
                   className={({ isActive }) =>
@@ -153,7 +153,7 @@ const Header = () => {
                 </NavLink>
               </li>
             )}
-            <li>
+            <li className="ml-4 ">
               <NavLink
                 to="/register"
                 className={({ isActive }) => (isActive ? "active" : "default")}
@@ -161,7 +161,7 @@ const Header = () => {
                 Register
               </NavLink>
             </li>
-            <li>
+            <li className="ml-4">
               <NavLink
                 to="/blog"
                 className={({ isActive }) => (isActive ? "active" : "default")}
@@ -172,15 +172,15 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {user && (
-            <li title={user.displayName} className="md:ml-24 lg:ml-30 xl:ml-52">
-              <img
-                className="w-20 h-20 border rounded-full"
-                src={user.photoURL}
-                alt=""
-              />
-            </li>
-          )}
+        {user && (
+          <p title={user.displayName} className=" ">
+            <img
+              className="w-20 h-20 border rounded-full"
+              src={user.photoURL}
+              alt=""
+            />
+          </p>
+        )}
         </div>
       </div>
     </div>

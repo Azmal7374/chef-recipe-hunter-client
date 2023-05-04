@@ -2,7 +2,7 @@
 import React from 'react';
 import {Link, useRouteError } from 'react-router-dom';
 import { FaceFrownIcon } from '@heroicons/react/24/solid';
-
+import errors from '../../assets/errors.avif'
 
 const ErrorPage = () => {
     const   {error, status} = useRouteError();
@@ -11,16 +11,19 @@ const ErrorPage = () => {
     return (
         <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>
         <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
-          <FaceFrownIcon className='w-40 h-40 text-yellow-500' />
+        <div>
+         <img className='mt-10 w-96 rounded-md border' src={errors} alt="" />
+        </div>
+           
           <div className='max-w-md text-center'>
-            <h2 className='mb-8 font-extrabold text-9xl text-yellow-500'>
+            <h2 className='mt-3 mb-2 font-extrabold text-4xl text-yellow-500'>
               <span className='sr-only'>Error</span>
               {status || 404}
             </h2>
-            <p className='text-2xl font-semibold md:text-3xl text-red-800 mb-8'>
+            <p className='text-2xl font-semibold md:text-2xl text-gray-800 mb-8'>
               {error?.message}
             </p>
-            <Link to='/' className=' bg-orange-500 p-4 rounded-md text-white font-bold hover:bg-orange-700'>
+            <Link to='/' className=' bg-gray-500 p-4 rounded-md text-white font-bold hover:bg-gray-700'>
               Back to homepage
             </Link>
           </div>

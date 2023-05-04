@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 
 const ChefRecipeDetails = ({cDetails}) => {
+  const [fold, setFold] = useState(true)
     const {_id,recipeTitle,cooking_rating, ingredirents,cookingMethods} = cDetails;
     console.log(cDetails);
     return (
@@ -21,7 +22,21 @@ const ChefRecipeDetails = ({cDetails}) => {
     </ul>
     <div className="mt-3">
     <p className="font-bold">Cooking Methods:</p>
-    <p className='text-gray-600'>{cookingMethods.slice(0,200)}... <span className="text-orange-500">Read More</span></p>
+    
+    
+    { fold ?(
+      <>
+      <p className=' text-gray-500'>{cookingMethods.substring(0,100)}.....</p>
+      <span className='cursor-pointer text-blue-600 mb-5' onClick={() =>setFold(!fold)}>Read More</span>
+      </>
+      ): (
+        <>
+        <p className=' text-gray-900'>{cookingMethods}....</p>
+      <span className='cursor-pointer text-blue-600 mb-5' onClick={() =>setFold(fold)}>Read Less</span>
+        </> 
+      
+  )
+}
     </div>
     <div className='mt-2 flex items-center'>
         
