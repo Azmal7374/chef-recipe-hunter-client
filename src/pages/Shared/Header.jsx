@@ -99,6 +99,16 @@ const Header = () => {
                   Blog
                 </NavLink>
               </li>
+              <li className="mt-2">
+              <NavLink
+                to="/aboutus"
+                className={({ isActive }) =>
+                  isActive ? "active" : "default"
+                }
+              >
+                AboutUs
+              </NavLink>
+            </li>
             </ul>
           </div>
         </div>
@@ -152,17 +162,29 @@ const Header = () => {
                 Blog
               </NavLink>
             </li>
+            <li className="ml-4">
+            <NavLink
+              to="/aboutus"
+              className={({ isActive }) =>
+                isActive ? "active" : "default"
+              }
+            >
+              AboutUs
+            </NavLink>
+          </li>
           </ul>
         </div>
         <div className="navbar-end">
         {user && (
-          <p title={user.displayName} className=" ">
-            <img
-              className="w-10 h-10 md:w-16 md:h-16 border rounded-full"
-              src={user.photoURL}
-              alt=""
-            />
-          </p>
+         <Link to='profile'>
+         <p  title={user.displayName} className=" ">
+         <img
+           className="w-10 h-10 md:w-16 md:h-16 border rounded-full"
+           src={user.photoURL}
+           alt=""
+         />
+       </p>
+         </Link>
         )}
         </div>
       </div>

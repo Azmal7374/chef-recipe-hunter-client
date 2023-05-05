@@ -8,6 +8,8 @@ import { ErrorIcon } from "react-hot-toast";
 import ErrorPage from "../pages/Errorpage/ErrorPage";
 import ChefDetails from "../pages/ChefDetails/ChefDetails";
 import PrivateRoute from "./PrivateRoute";
+import ProfileDetails from "../pages/Profile/ProfileDetails";
+import Aboutus from "../pages/Aboutus/Aboutus";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <Blog></Blog>,
       },
+      {
+        path: "/profile",
+        element: <ProfileDetails></ProfileDetails>
+      },
+      {
+        path: "/aboutus",
+        element: <Aboutus></Aboutus>
+      }
     ],
   },
 ]);
