@@ -5,6 +5,7 @@ import ChefRecipeDetails from '../ChefRecipeDetails/ChefRecipeDetails';
 const ChefDetails = () => {
     const chefDetails = useLoaderData()
     console.log(chefDetails);
+    
     let data ={};
     for(const recipes of chefDetails) {
          data =recipes

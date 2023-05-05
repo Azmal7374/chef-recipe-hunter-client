@@ -6,7 +6,7 @@ import LazyLoad from 'react-lazy-load';
 import SpinnerContainer from "../Shared/SpinnerContainer";
 
 const Chefs = ({ chef }) => {
-  const[loading, setLoading] = useState(true)
+  // const[loading, setLoading] = useState(true)
   const {
     id,
     chefName,

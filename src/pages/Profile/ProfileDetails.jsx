@@ -9,7 +9,7 @@ const ProfileDetails = () => {
        <div className="bg-gray-500  w-96 mx-auto p-8 border border-white rounded-md mt-10">
        <div className='text-center'>
        <h1 className='text-white text-3xl font-bold'>{user? user.displayName :""}</h1>
-       <p className='text-white text-xl '>{ user? user.Email :""}</p>
+       <p className='text-white text-xl '>{ user? user.email :""}</p>
        <hr className='mt-4 border-2 border-gray-400'/>
       <div className='mt-4 '>
       <img className='w-24 h-24 mx-auto rounded-full' src={user? user.photoURL :""} alt="" />

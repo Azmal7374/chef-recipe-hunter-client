@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import foodie1 from '../../assets/foodie1.avif'
 import foodie2 from '../../assets/foodie2.avif'
 import foodie3 from '../../assets/foodie3.avif'
@@ -12,9 +12,11 @@ import SpinnerContainer from '../Shared/SpinnerContainer';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import 'react-awesome-slider/dist/styles.css';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Home = () => {
-     const[loading, setLoading] =useState(false)
+    const {loading} = useContext(AuthContext)
+    console.log(loading);
     const [latesArticles, setLatesArticles] =useState([])
     useEffect(() =>{
            
@@ -26,7 +28,9 @@ const Home = () => {
     },[])
 
     const chef = useLoaderData()
-    
+    if(loading){
+      return <SpinnerContainer></SpinnerContainer>
+    }
     
     return (
         <div className="my-container">
