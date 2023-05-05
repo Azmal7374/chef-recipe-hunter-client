@@ -115,10 +115,10 @@ const Login = () => {
    
         
           <div className="">
-            <div className="w-96  rounded-md mx-auto bg-white  p-8 ">
-              <h2 className="text-center font-bold text-3xl ">Login</h2>
+            <div className="md:w-96  rounded-md mx-auto bg-white  p-8 ">
+              <h2 className="text-center font-bold text-2xl ">Login</h2>
               <div className=" flex justify-start mt-5">
-                <form onSubmit={handleLogin} className="w- max-w-sm mx-auto">
+                <form onSubmit={handleLogin} className="w- max-w-sm md:mx-auto">
                   <div className="md:flex md:items-center mb-5 ">
                     <div className="md:w-1/3">
                       <label
@@ -199,7 +199,7 @@ const Login = () => {
                 </form>
               </div>
 
-              <p className="  mt-2 text-center">Don't have account?
+              <p className="  mt-2 md:text-center">Don't have account?
                 <Link to="/register" className="text-orange-500 mx-1">
                   Sign up
                 </Link>
@@ -210,7 +210,7 @@ const Login = () => {
               <p className="flex justify-center text-success font-bold text-shadow mt-4">
                 {success}
               </p>
-              <div  onClick={handleGoogleLogin} className="mt-2 flex justify-center">
+              <div  onClick={handleGoogleLogin} className="mt-2 flex md:justify-center">
                 <button
                  
                   className="h-12 pl-2 pr-2 border-2 border-blue-600 rounded-l-md"
@@ -219,7 +219,7 @@ const Login = () => {
                 </button>
                 <button className="bg-blue-600 hover:bg-blue-700 p-3 h-12 w-48 text-white rounded-r-md font-semibold" style={{fontSize:'13px'}}>LOG IN WITH GOOGLE</button>
               </div>
-              <div onClick={handleGithubLogin} className="mt-2 flex items-center  justify-center">
+              <div onClick={handleGithubLogin} className="mt-2 flex items-center  md:justify-center">
                 <button
                  
                   className=" h-12 pl-2 pr-2  border-2 border-purple-600 rounded-l-md "

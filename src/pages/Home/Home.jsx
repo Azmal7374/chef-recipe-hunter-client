@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import foodie1 from '../../assets/foodie1.avif'
 import foodie2 from '../../assets/foodie2.avif'
+import foodie3 from '../../assets/foodie3.avif'
 import LatesArticles from '../LatesArticles/LatesArticles';
 import Chefs from '../Chefs/Chefs';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShare, faHeartBroken, faArrowRotateRight } from '@fortawesome/free-solid-svg-icons'
+import SpinnerContainer from '../Shared/SpinnerContainer';
+
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+import 'react-awesome-slider/dist/styles.css';
+
 const Home = () => {
+     const[loading, setLoading] =useState(false)
     const [latesArticles, setLatesArticles] =useState([])
     useEffect(() =>{
-        fetch('https://chef-recipe-hunter-server-azmal7374.vercel.app/latesarticles')
-        .then(res=>res.json())
-        .then(data =>setLatesArticles(data))
+           
+            fetch('https://chef-recipe-hunter-server-azmal7374.vercel.app/latesarticles')
+            .then(res=>res.json())
+            .then(data =>setLatesArticles(data))
+     
+       
     },[])
 
     const chef = useLoaderData()
@@ -20,7 +31,7 @@ const Home = () => {
     return (
         <div className="my-container">
              <section className="bg-slate-100">
-           <div className="md:flex gap-5 p-4">
+           <div className="grid md:grid-cols-2 gap-5 p-4">
            <div className=" mt-10 md:mt-32">
            <h2 className='ml-10 mr-10 text-gray-600'>The food blog with mostly healthy recipes made with real, whole foods inspiring more people to get into the kitchen and cook something good.
            </h2>
@@ -29,7 +40,11 @@ const Home = () => {
           </div>
            </div>
            <div className=" mt-10">
-           <img className="rounded-md" src={foodie1} alt="" />
+           <AwesomeSlider animation="cubeAnimation">
+           <div><img src={foodie1} alt="" /></div>
+           <div><img src={foodie2} alt="" /></div>
+           <div><img src={foodie3} alt="" /></div>
+         </AwesomeSlider>
            </div>
            </div>
              </section>

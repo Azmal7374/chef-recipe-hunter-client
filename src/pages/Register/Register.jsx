@@ -96,8 +96,8 @@ const Register = () => {
      <div className="my-container" >
 
     <div className='mt-8'>
-    <div className="  bg-white w-96 p-4 rounded-md  backdrop-brightness-50 mx-auto ">
-    <h2 className='text-center text-3xl font-bold '>Register</h2>
+    <div className="  bg-white md:w-96 p-4 rounded-md  backdrop-brightness-50 md:mx-auto ">
+    <h2 className='text-center text-2xl font-bold '>Register</h2>
     <div className="flex justify-start mt-4 ">
    
     <form onSubmit={handleSubmit} className="w-full max-w-sm ">
@@ -155,7 +155,7 @@ const Register = () => {
     <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="confirm" name="confirm" type="password" placeholder="******************" />
   </div>
 </div>
-<div className="mb-3 ml-32 flex items-center gap-3">
+<div className="mb-3 md:ml-32 flex items-center gap-3">
 <input type="checkbox"   className="checkbox checkbox-sm checkbox-success" />
 <Link to='/terms' className="hover:underline hover:text-orange-500">Terms & Conditions</Link>
 </div>
@@ -168,7 +168,7 @@ const Register = () => {
     
   </form>
   </div>
-  <p className="flex justify-center mt-3 md:ml-24">Already have account?<Link to='/login' className='text-orange-500 mx-1'> Login</Link></p>
+  <p className="flex md:justify-center mt-3 md:ml-24">Already have account?<Link to='/login' className='text-orange-500 mx-1'> Login</Link></p>
   <p className=" flex justify-center text-orange-400 font-bold text-shadow mt-3">{error}</p>
   <p className='flex justify-center text-success font-bold text-shadow mt-3'>{success}</p>
     </div>

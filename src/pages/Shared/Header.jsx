@@ -1,24 +1,7 @@
 import React, { useContext, useState } from "react";
-import {
-  BoltIcon,
-  Bars3BottomRightIcon,
-  XMarkIcon,
-  ArrowLeftOnRectangleIcon,
-  user,
-} from "@heroicons/react/24/solid";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEye,
-  faEyeSlash,
-  faUser,
-  faMessage,
-  faGear,
-  faLock,
-  faArrowRightFromBracket,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
-import Marquee from "react-fast-marquee";
+import {} from "@fortawesome/free-solid-svg-icons";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Header = () => {
@@ -36,7 +19,7 @@ const Header = () => {
   return (
     <div className="my-container sticky top-0 z-30">
       <div className="navbar bg-slate-100">
-        <a className="btn btn-ghost normal-case text-4xl font-bold">
+        <a className="btn btn-ghost normal-case text-2xl font-bold">
           {" "}
           Foodie Crush
         </a>
@@ -175,7 +158,7 @@ const Header = () => {
         {user && (
           <p title={user.displayName} className=" ">
             <img
-              className="w-20 h-20 border rounded-full"
+              className="w-10 h-10 md:w-16 md:h-16 border rounded-full"
               src={user.photoURL}
               alt=""
             />

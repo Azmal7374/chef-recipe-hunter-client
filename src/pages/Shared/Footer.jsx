@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className="mt-10">
-        <footer className="footer p-10 bg-gray-700 text-base-content">
+        <div className="mt-10 ">
+        <footer className=" footer p-10 bg-gray-700 text-base-content">
         <div className="text-white">
           <span className="font-bold text-2xl">Contact Info</span> 
         <div className="flex items-center ">
