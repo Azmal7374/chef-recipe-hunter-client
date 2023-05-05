@@ -5,6 +5,7 @@ import {
   faHeartBroken,
   faArrowRotateRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { MagnifyingGlass } from "react-loader-spinner";
 const LatesArticles = ({ article }) => {
   const [fold, setFold] = useState(true);
   const { title, image, intitle, like, share, description, date } = article;
